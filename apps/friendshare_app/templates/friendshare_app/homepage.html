@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOMEPAGE</title>
+</head>
+<body>
+    <h1>YOU HAVE BEEN ADMITTED TO ELYSIUM</h1>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+        {% for x in users %}
+        <tr>
+            <td> {{x.name}}</td>
+            <td> {{x.email}}</td>
+            <td> {{x.created_at}}</td>
+            <td> <a href="/render_display/{{x.id}}">Show</a> <a href="/render_account_fixer/{{x.id}}">Edit</a> <a href="/delete_user/{{x.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/render_account_builder">Create Account</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ACCOUNT FIXER</title>
+</head>
+<body>
+    <h1>FIX ACCOUNT : {{x.id}}</h1>
+    
+        <form action="/fix_account/{{x.id}}" method = "post">
+            {% csrf_token %}
+            Name: {{x.name}}<input type="text" name="name">
+            Email: {{x.email}}<input type="text" name="email">
+            <input type="submit" value="Fix Account">
+        </form>
+</body>
+</html>
